@@ -11,10 +11,17 @@ import android.view.MotionEvent;
 import android.widget.TextView;
 
 /**
- * Set this on a textview and then you can potentially open links locally if applicable
+ * Set this on a {@link TextView} and then you can potentially open links locally, modify the URLs,
+ * etc
  */
 public abstract class InternalLinkMovementMethod extends LinkMovementMethod {
 
+    /**
+     * A link has been clicked
+     * @param textView the textview
+     * @param link the link
+     * @param text the text of the href link
+     */
     protected abstract void onLinkClicked(@NonNull TextView textView, @NonNull String link, @Nullable String text);
 
     @Override
