@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        TextView textView = (TextView) findViewById(R.id.text);
+        TextView textView = findViewById(R.id.text);
         textView.setText(Html.fromHtml(TEXT));
         textView.setMovementMethod(new InternalLinkMovementMethod() {
             @Override
