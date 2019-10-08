@@ -6,20 +6,19 @@ LinkMovementMethod that allows for custom overrides
 # Usage
 
 ```java
-textView.setText(Html.fromHtml(TEXT));
-textView.setMovementMethod(new InternalLinkMovementMethod() {
-    @Override
-    protected void onLinkClicked(@NonNull TextView textView, @NonNull String link, @Nullable String text) {
-        Toast.makeText(MainActivity.this, "Link: " + link + " with text: " + text + " clicked", Toast.LENGTH_LONG)
-                .show();
+textView.setText(Html.fromHtml(TEXT))
+textView.movementMethod = object : InternalLinkMovementMethod() {
+    override fun onLinkClicked(textView: TextView, link: String, text: String?) {
+        Toast.makeText(this@MainActivity, "Link: $link with text: $text clicked", Toast.LENGTH_LONG)
+                .show()
     }
-});
+}
 ```
 
 License
 --------
 
-    Copyright 2017 Commit 451
+    Copyright 2019 Commit 451
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
